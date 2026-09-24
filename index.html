@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn practical digital, creative and workplace skills with Willscentsum Virtual School. Short online courses with guided learning.">
+  <title>Willscentsum | Virtual School</title>
+  <style>
+    :root {
+      --navy: #07163e;
+      --blue: #123fbd;
+      --blue2: #1b56e8;
+      --gold: #f4c62e;
+      --ink: #17213b;
+      --muted: #65708a;
+      --pale: #f4f7ff;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--ink); background: #fff; line-height: 1.55; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    header { background: var(--navy); color: white; position: sticky; top: 0; z-index: 10; box-shadow: 0 3px 16px #06133330; }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .2px; }
+    .brand-mark { width: 42px; height: 42px; border: 2px solid var(--gold); border-radius: 50%; display: grid; place-items: center; color: var(--gold); font-size: 22px; }
+    .brand small { display: block; color: #d6def5; font-size: 10px; letter-spacing: 2px; font-weight: 600; margin-top: -3px; }
+    nav { display: flex; align-items: center; gap: 26px; font-size: 14px; font-weight: 600; color: #e6ebff; }
+    nav a:hover { color: var(--gold); }
+    .nav-cta, .btn { border: 0; border-radius: 999px; background: var(--gold); color: #101a3d; font-weight: 800; padding: 12px 20px; display: inline-flex; justify-content: center; align-items: center; cursor: pointer; transition: transform .18s, box-shadow .18s; }
+    .nav-cta:hover, .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #f4c62e40; }
+    .hero { color: white; background: radial-gradient(circle at 83% 20%, #2456d5 0, transparent 32%), linear-gradient(125deg, #07163e 0%, #0b246b 62%, #123fbd 100%); overflow: hidden; }
+    .hero-inner { min-height: 520px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 30px; padding-top: 56px; padding-bottom: 56px; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; font-size: 12px; font-weight: 800; letter-spacing: 2px; }
+    h1 { font-size: clamp(38px, 5.2vw, 66px); line-height: 1.03; letter-spacing: -2px; margin: 14px 0 18px; }
+    h1 span { color: var(--gold); }
+    .hero p { max-width: 570px; color: #dce5ff; font-size: 17px; margin: 0 0 28px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-outline { border: 1px solid #ffffff80; color: white; background: transparent; border-radius: 999px; padding: 11px 20px; font-weight: 700; }
+    .hero-note { color: #dce5ff; font-size: 12px; margin-top: 16px; }
+    .hero-art { min-height: 350px; position: relative; display: grid; place-items: center; }
+    .orbit { position: absolute; width: 340px; height: 340px; border: 1px solid #ffffff30; border-radius: 50%; }
+    .orbit:before, .orbit:after { content: ""; position: absolute; border: 1px solid #ffffff25; border-radius: 50%; inset: 28px; }
+    .orbit:after { inset: 65px; }
+    .cap { position: relative; width: 270px; height: 190px; display: grid; place-items: center; }
+    .cap-top { width: 250px; height: 110px; background: linear-gradient(135deg, #1b56e8, #092b87); clip-path: polygon(50% 0, 100% 35%, 50% 70%, 0 35%); filter: drop-shadow(0 16px 12px #0005); }
+    .cap-base { position: absolute; top: 76px; width: 150px; height: 75px; border-radius: 0 0 60px 60px; background: linear-gradient(90deg, #0a236a, #174ac7); }
+    .tassel { position: absolute; right: 8px; top: 55px; width: 4px; height: 100px; background: var(--gold); transform: rotate(-10deg); }
+    .tassel:after { content: ""; position: absolute; bottom: -12px; left: -5px; width: 14px; height: 24px; background: var(--gold); clip-path: polygon(25% 0,75% 0,100% 100%,0 100%); }
+    .book { position: absolute; bottom: 13px; width: 150px; height: 52px; background: #fff; border-radius: 6px 6px 12px 12px; box-shadow: 0 10px 20px #0004; transform: perspective(200px) rotateX(25deg); }
+    .book:before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #c8d2ed; }
+    .hero-bubble { position: absolute; background: white; color: var(--navy); border-radius: 16px; padding: 12px 15px; box-shadow: 0 12px 25px #0003; font-weight: 800; font-size: 13px; }
+    .bubble-one { top: 36px; right: 0; }
+    .bubble-two { bottom: 36px; left: 0; }
+    .bubble-one b, .bubble-two b { color: #174ac7; display: block; font-size: 20px; }
+    .stats { background: white; margin-top: -1px; }
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 22px 0; }
+    .stat { display: flex; align-items: center; justify-content: center; gap: 10px; border-right: 1px solid #e3e8f3; }
+    .stat:last-child { border: 0; }
+    .stat strong { font-size: 20px; color: var(--blue); }
+    .stat span { color: var(--muted); font-size: 12px; }
+    section { padding: 76px 0; }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 34px; }
+    .section-head h2 { color: var(--navy); font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin: 9px 0 12px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .courses { background: var(--pale); }
+    .course-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .course { background: white; border: 1px solid #e6ebf6; border-radius: 16px; padding: 20px; box-shadow: 0 6px 22px #152b5c08; display: flex; flex-direction: column; min-height: 250px; }
+    .course-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: #edf2ff; font-size: 24px; margin-bottom: 14px; }
+    .course h3 { font-size: 16px; color: var(--navy); margin: 0 0 8px; }
+    .course p { color: var(--muted); font-size: 13px; margin: 0 0 17px; flex: 1; }
+    .course a { color: var(--blue); font-weight: 800; font-size: 13px; }
+    .price-band { margin-top: 28px; background: var(--navy); color: white; border-radius: 18px; padding: 24px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .price-band h3 { margin: 0 0 3px; font-size: 20px; }
+    .price-band p { margin: 0; color: #d4defc; font-size: 13px; }
+    .price { font-size: 34px; font-weight: 900; color: var(--gold); white-space: nowrap; }
+    .price small { font-size: 12px; color: white; font-weight: 600; }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .why { padding: 22px; border: 1px solid #e8edf7; border-radius: 16px; }
+    .why .tick { color: #0b9b68; font-size: 22px; font-weight: 900; }
+    .why h3 { margin: 7px 0; color: var(--navy); font-size: 16px; }
+    .why p { color: var(--muted); font-size: 13px; margin: 0; }
+    .about { background: #f8faff; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; align-items: center; }
+    .about-card { background: linear-gradient(145deg, #0a1c50, #174ac7); border-radius: 20px; padding: 34px; color: white; min-height: 270px; display: flex; flex-direction: column; justify-content: end; }
+    .about-card .seal { font-size: 44px; color: var(--gold); }
+    .about-card strong { font-size: 24px; line-height: 1.15; margin-top: 10px; }
+    .about-copy h2 { color: var(--navy); font-size: 34px; margin: 0 0 12px; }
+    .about-copy p { color: var(--muted); }
+    .contact { background: var(--navy); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: start; }
+    .contact h2 { font-size: 34px; margin: 8px 0 12px; }
+    .contact p { color: #d5def8; }
+    .contact-form { background: white; border-radius: 18px; padding: 24px; color: var(--ink); }
+    .field { margin-bottom: 13px; }
+    label { display: block; font-size: 12px; font-weight: 800; margin-bottom: 6px; }
+    input, select, textarea { width: 100%; border: 1px solid #d9e0ee; border-radius: 10px; padding: 12px; font: inherit; font-size: 14px; outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--blue2); box-shadow: 0 0 0 3px #1b56e81a; }
+    textarea { min-height: 90px; resize: vertical; }
+    .form-note { color: #65708a; font-size: 11px; margin: 10px 0 0; }
+    footer { background: #050f2c; color: #b8c4e4; padding: 22px 0; font-size: 12px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 850px) {
+      nav { gap: 14px; }
+      .course-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-inner { grid-template-columns: 1fr .8fr; }
+      .hero-art { transform: scale(.85); }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 30px, 1120px); }
+      .nav { min-height: 64px; }
+      nav { display: none; }
+      .brand-mark { width: 36px; height: 36px; }
+      .hero-inner { display: block; padding-top: 54px; padding-bottom: 25px; }
+      .hero p { font-size: 15px; }
+      .hero-art { min-height: 260px; transform: scale(.75); margin: -8px auto -30px; max-width: 400px; }
+      .stats-row { gap: 5px; }
+      .stat { flex-direction: column; text-align: center; gap: 0; }
+      .stat strong { font-size: 17px; }
+      .stat span { font-size: 10px; }
+      section { padding: 56px 0; }
+      .course-grid { gap: 10px; }
+      .course { padding: 15px; min-height: 250px; }
+      .course h3 { font-size: 14px; }
+      .course p { font-size: 12px; }
+      .price-band { padding: 20px; align-items: flex-start; flex-direction: column; }
+      .why-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 18px; }
+      .about-card { min-height: 210px; }
+      .about-copy h2, .contact h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Willscentsum home">
+      <span class="brand-mark">☾</span>
+      <span>WILLSCENTSUM<small>VIRTUAL SCHOOL</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#courses">Courses</a><a href="#about">About</a><a href="#why-us">Why learn with us</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Enquire now</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow">Learn today • Skill tomorrow • Succeed always</div>
+        <h1>Skills that <span>open doors.</span></h1>
+        <p>Build practical digital and workplace skills through short, guided online courses. Learn at your pace and take the next step toward your goals.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#courses">Explore courses&nbsp; →</a>
+          <a class="btn-outline" href="#contact">Ask a question</a>
+        </div>
+        <div class="hero-note">Flexible learning • Practical lessons • Certificate of completion*</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit"></div>
+        <div class="hero-bubble bubble-one"><b>Learn</b>New skills</div>
+        <div class="hero-bubble bubble-two"><b>Grow</b>Your confidence</div>
+        <div class="cap"><div class="cap-top"></div><div class="cap-base"></div><div class="tassel"></div><div class="book"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="wrap stats-row">
+      <div class="stat"><strong>8+</strong><span>Course areas</span></div>
+      <div class="stat"><strong>Online</strong><span>Learn from anywhere</span></div>
+      <div class="stat"><strong>Practical</strong><span>Skills for everyday work</span></div>
+    </div>
+  </div>
+
+  <section class="courses" id="courses">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Choose your next skill</div>
+        <h2>Short courses. Big opportunities.</h2>
+        <p>Explore the course areas below. Ask us for the current schedule, course duration and what is included before enrolling.</p>
+      </div>
+      <div class="course-grid">
+        <article class="course"><div class="course-icon">📱</div><h3>Social Media Management</h3><p>Content planning, scheduling, Facebook and Instagram marketing, and client management.</p><a href="#contact">Enquire about course →</a></article>
+        <article class="course"><div class="course-icon">🗂️</div><h3>Virtual Assistant (VA)</h3><p>Email and calendar management, customer support, internet research and productivity tools.</p><a href="#contact">Enquire about course →</a></article>
+        <article class="course"><div class="course-icon">🎨</div><h3>Graphic Design</h3><p>Learn design basics and create posters, social graphics and simple brand materials.</p><a href="#contact">Enquire about course →</a></article>
+        <article class="course"><div class="course-icon">🎙️</div><h3>Transcription</h3><p>Audio transcription, formatting, grammar and using transcription software.</p><a href="#contact">Enquire about course →</a></article>
+        <article class="course"><div class="course-icon">📈</div><h3>Digital Marketing</h3><p>SEO, email marketing, Google Ads, Meta Ads and analytics fundamentals.</p><a href="#contact">Enquire about course →</a></article>
+        <article class="course"><div class="course-icon">🎬</div><h3>Video Editing</h3><p>Editing basics for short-form videos, social media clips and simple promotional content.</p><a href="#contact">Enquire about course →</a></article>
+        <article class="course"><div class="course-icon">🤖</div><h3>AI Productivity Tools</h3><p>Use AI tools for drafting, research, organizing tasks and supporting business workflows.</p><a href="#contact">Enquire about course →</a></article>
+        <article class="course"><div class="course-icon">💻</div><h3>Computer Packages</h3><p>Build confidence with Microsoft Word, Excel, PowerPoint and essential computer skills.</p><a href="#contact">Enquire about course →</a></article>
+      </div>
+      <div class="price-band">
+        <div><h3>Want to get started?</h3><p>Confirm the latest fees, session format and enrollment dates with the school.</p></div>
+        <div class="price">KSh 100 <small>/ session*</small></div>
+      </div>
+      <p style="font-size:11px;color:#65708a;margin:10px 2px 0;">*The session price and certificate details are shown as advertised in the reference image. Confirm current terms with the provider before publishing or paying.</p>
+    </div>
+  </section>
+
+  <section id="why-us">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Learning made approachable</div>
+        <h2>Learn skills you can put to use</h2>
+        <p>Get clear course information and choose a learning path that matches your interests and availability.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why"><div class="tick">✓</div><h3>Flexible online learning</h3><p>Ask about lesson times and available options so you can plan around your schedule.</p></div>
+        <div class="why"><div class="tick">✓</div><h3>Practical focus</h3><p>Course areas are centered on digital, creative and workplace skills.</p></div>
+        <div class="why"><div class="tick">✓</div><h3>Guidance before enrollment</h3><p>Contact the school to understand the curriculum, requirements and any extra costs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-card"><div class="seal">☾ ✦</div><strong>Learn today.<br>Skill tomorrow.<br>Succeed always.</strong></div>
+      <div class="about-copy">
+        <div class="eyebrow">About the school</div>
+        <h2>Make your next step a learning step.</h2>
+        <p>Willscentsum Virtual School is presented here as an online learning destination for people interested in developing digital and professional skills.</p>
+        <p>Before launch, add the school's verified background, trainer details, course outlines, student support information and official contact channels so visitors can make an informed choice.</p>
+        <a class="btn" href="#contact">Get course details</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow">Contact / enrollment enquiry</div>
+        <h2>Which skill would you like to learn?</h2>
+        <p>Send an enquiry and the school can follow up with course details, fees and enrollment steps. Submitting this form opens WhatsApp with your message ready to send.</p>
+        <p><strong>Email:</strong> <a style="color:#f4c62e;text-decoration:underline" href="mailto:Earnestnjeka75@gmail.com">Earnestnjeka75@gmail.com</a><br><strong>WhatsApp:</strong> <a style="color:#f4c62e;text-decoration:underline" href="https://wa.me/254713834153" target="_blank" rel="noopener">0713 834 153</a></p>
+      </div>
+      <form class="contact-form" id="enquiryForm">
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" placeholder="Enter your name" required></div>
+        <div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" placeholder="e.g. 07XX XXX XXX" required></div>
+        <div class="field"><label for="course">Course of interest</label><select id="course" name="course" required><option value="">Select a course</option><option>Social Media Management</option><option>Virtual Assistant (VA)</option><option>Graphic Design</option><option>Transcription</option><option>Digital Marketing</option><option>Video Editing</option><option>AI Productivity Tools</option><option>Computer Packages</option></select></div>
+        <div class="field"><label for="message">Message (optional)</label><textarea id="message" name="message" placeholder="Ask about fees, dates or course content"></textarea></div>
+        <button class="btn" type="submit">Prepare enquiry</button>
+        <p class="form-note" id="formNote">Your message will open in WhatsApp. Review it and tap Send.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> Willscentsum Virtual School</span><span>Practical skills • Online learning</span></div></footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const course = document.getElementById('course').value;
+    const message = document.getElementById('message').value.trim();
+    const text = `Hello, my name is ${name}. I am interested in ${course}. My phone/WhatsApp is ${phone}.${message ? ' Message: ' + message : ''}`;
+    const note = document.getElementById('formNote');
+    window.location.href = 'https://wa.me/254713834153?text=' + encodeURIComponent(text);
+  });
+</script>
+</body>
+</html>
